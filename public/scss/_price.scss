@@ -1,0 +1,171 @@
+.single-price-item {
+    padding: 30px;
+    border-radius: 5px;
+    position: relative;    
+    margin-bottom: 30px;
+
+    .price-icon {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    
+    h4 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+    
+    span.price-amount {
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    .price-feature-list {
+        margin-top: 40px;
+        ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            display: block;
+            @media #{$lg}{
+                font-size: 15px;
+            }
+            @media #{$xs}{
+                font-size: 14px;
+            }
+            i {
+                color: $text-black;                
+                position: absolute;
+                top: 7px;
+                left: 0;
+            }
+        }
+        
+    }
+
+    .primary-btn {
+        width: 100%;
+        margin-top: 25px;        
+    }
+
+    &:hover{
+        .primary-btn{
+            background: $secondary_color;
+            border-color: $secondary_color;
+        }
+    }
+}
+
+// Price # 02
+
+.price-tab-wrap.gray-bg {
+    padding: 40px;
+    @media #{$md}{
+        margin-bottom: 30px;
+    }
+    @media #{$xs}{
+        padding: 20px;
+    }
+}
+
+.price-feat-list {
+    margin-top: 30px;
+}
+
+.price-feat-list ul li {
+    display: block;
+    background: #fff;
+    padding: 15px;
+    @media #{$xs}{
+        font-size: 14px;
+    }
+}
+
+.price-feat-list ul li:not(:last-child){
+    margin-bottom: 15px;
+}
+
+.price-feat-list ul li i {
+    margin-right: 15px;
+    color: #C7CB36;
+}
+
+.single-price-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #ddd;
+    padding: 33px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    @media #{$xs}{
+        display: block;
+        text-align: start;
+    }
+}
+
+.price-amount h2 span {
+    font-size: 16px;
+    color: #616670;
+    
+}
+
+.price-title h4 {
+    font-size: 32px;
+    font-weight: 600;
+    @media #{$xs}{
+        margin-top: 10px;
+    }
+}
+
+.price-coupon span {
+    font-size: 16px;
+    color: #616670;
+}
+
+.price-tab .nav-tabs{
+    border-bottom: none;
+}
+
+.price-tab .nav-tabs .nav-link.active {
+    background: #C7CB36;
+    border: 1px solid #C7CB36;
+    color: #fff;
+}
+
+.price-tab .nav-tabs .nav-link {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    color: $text-black;
+}
+
+// Price # 03
+
+.price-three{
+    .single-price-item{
+        text-align: center;
+    }   
+    .price-icon{
+        position: static;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .primary-btn {      
+        margin-top: 30px;        
+    }
+    .price-feature-list {
+        margin-top: 30px;
+        ul{
+            text-align: start;
+        }
+    }
+}
+
+.price-section .mt-60{
+    @media #{$xs}{
+        margin-top: 30px;
+    }
+}

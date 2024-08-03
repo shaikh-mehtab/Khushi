@@ -1,0 +1,98 @@
+<div class="footer-area footer-area-three pt-120" data-background="/img/demo/footer-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <div class="logo">
+                        <a href="/"><img src="<%= "/api/transform/"+JSON.parse(footer.data[0].footer_logo) %>" alt=""></a>
+                    </div>
+                    <div class="contact-info-wrap">
+                        <div class="single-contact-info">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h6>Address</h6>
+                                <p><%= address.data[0].address %></p>
+                            </div>
+                        </div>
+                        <div class="single-contact-info">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h6>Phone</h6>
+                                <p><a style="color: white;" href="tel:<%= address.data[0].phone_number %>"><%= address.data[0].phone_number %></a></p>
+
+                            </div>
+                        </div>
+
+                        <div class="single-contact-info">
+                            <div class="contact-icon">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h6>Email</h6>
+                               
+                                <p><a style="color: white;" href="mailto:<%= address.data[0].email %>"><%= address.data[0].email  %></a></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-1 col-lg-1 d-none d-lg-block"></div>
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h5>Products</h5>
+                    <div class="list-item">
+                        <ul>
+                            <% var p = p.data %>
+
+                            <% for(var i=0; p.length && i < 3 ; i++ ) {%>
+                            <li><i class="las la-angle-double-right"><a href="/product/<%= p[i].slug %>"><%= p[i].title %> </i></a></li>
+
+                                <%} %>
+                                    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-6">
+                <div class="footer-widget">
+                    <h5>Link</h5>
+                    <div class="list-item">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/products">Our Products</a></li>
+                            <li><a href="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>                
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="footer-widget">
+                    <h5>Our Newsletter</h5>
+                    <div class="newsletter-form">
+                        <input type="text" placeholder="Your E-mail">
+                        <input type="submit" value="Subscribe">
+                    </div>
+                </div>
+            </div>                
+        </div>
+        <div class="footer-bottom row mt-80">
+            <div class="col-lg-6 col-md-5">
+                <span>© Khushi Group 2024 | All Rights Reserved</span>
+            </div>
+            <div class="col-lg-6 col-md-7 text-md-end">
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+                
+            </div>
+        </div>
+    </div>

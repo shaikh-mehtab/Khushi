@@ -1,0 +1,263 @@
+
+
+
+<% var product =  product.data %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <title><%= product.webpage_title %></title>
+
+    <!--Favicon-->
+    <link rel="icon" href="
+        <% if (store.data[0].logo1 != null) { %>
+            <%= "/api/transform/"+ JSON.parse(store.data[0].logo1)%>
+        <% } else {  %>
+          <%= `img/demo/favicon.png ` 
+          %>
+        <% } %>
+        
+        " type="image/jpg">
+
+        <meta name="description" content="<%= product.meta_desc %>" />
+        <meta name="title" content="<%= product.meta_title %>" />
+
+
+    <!--  CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Line Awesome CSS -->
+    <link href="/css/line-awesome.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="/css/fontAwesomePro.css" rel="stylesheet">
+    <!-- Flaticon CSS -->
+    <link href="/css/flaticon.css" rel="stylesheet">
+    <!-- Animate CSS-->
+    <link href="/css/animate.css" rel="stylesheet">    
+    <!-- Magnific Popup Video -->
+    <link href="/css/magnific-popup.css" rel="stylesheet">    
+    <!-- Owl Carousel CSS -->
+    <link href="/css/owl.carousel.css" rel="stylesheet">
+    <!-- Slick Slider CSS -->
+    <link href="/css/slick.css" rel="stylesheet">
+    <!-- Nice Select  -->
+    <link href="/css/nice-select.css" rel="stylesheet">
+    <!-- Back to Top -->
+    <link href="/css/backToTop.css" rel="stylesheet">
+    <!-- Metis Menu -->
+    <link href="/css/metismenu.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="/css/style.css" rel="stylesheet">    
+
+
+    <!-- jquery -->
+    <script src="/js/jquery-1.12.4.min.js"></script>
+
+
+</head>
+
+<style>
+    .project-bg {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+</style>
+
+<body>
+
+    
+
+   <%- include('include/page-header') %>
+
+    <!-- Breadcrumb Area  -->
+
+    <div class="breadcrumb-area" style="background-image: url(<% if (product.bradcrame_image != null) { %>
+        <%= "/api/transform/"+ JSON.parse(product.bradcrame_image)%>
+    <% } else {  %>
+      <%= `img/demo/favicon.png ` 
+      %>
+    <% } %>);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-title">
+                        <h1><%=product.bradcrame_name %></h1>
+                        <h6><a href="/">Home</a> /<a href="/products">Products</a>/ <%=product.bradcrame_name %></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Details  -->
+    <div class="service-details section-padding">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-xl-4 col-lg-4">
+                    <div class="service-details_sidebar">
+                        <div class="service-list-wrap">                            
+                            <ul class="service-list list-unstyled">
+                                <% var products = products.data %>
+
+                <% for(var i=0; i<products.length; i++ ) {%>
+                    <li class="d-block current"><a href="/product/<%= products[i].slug %>"><%= products[i].title %> <span><i class="las la-plus"></i></span></a></li>
+
+                    <%}%>
+                                
+                            </ul>
+                        </div>
+                        <div class="get-contact-wrap d-none d-lg-block mt-60">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <h4>Get touch</h4>
+                            <p>For Product</p>
+                            <span><a href="tel:<%= address.data[0].phone_number %>"><%= address.data[0].phone_number %></a></span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8">
+                    <div class="service-details-wrap">
+                        
+
+
+                        <div class="project-bg">
+                                <img class="project-image" src="<% if (product.image != null) { %>
+                                    <%= "/api/transform/"+ JSON.parse(product.image)%>
+                                <% } else {  %>
+                                  <%= `img/demo/favicon.png` %>
+                                <% } %>" alt="">
+                        </div>
+                        <div class="service-details-text mt-30">
+                            <h3><%= product.title %></h3>
+                            <p><%= product.description %></p>                            
+                        </div>                                                
+
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- CTA Section  -->
+    
+
+    <!-- Footer Area  -->
+    <%- include('include/footer') %>
+    
+
+
+    <!-- Search Dropdown -->
+
+    <div class="search-popup">
+        <span class="search-back-drop"></span>
+
+        <div class="search-inner">
+            <div class="container">
+                <div class="logo">
+                    <a class="navbar-brand" href="index.html"><img src="assets/img/logo-white.png" alt=""></a>
+                </div>
+                <button class="close-search"><span class="la la-times"></span></button>
+                <form method="post" action="index.html">
+                    <div class="form-group">
+                        <input type="search" name="search-field" value="" placeholder="Type your keyword" required="">
+                        <button type="submit"><i class="fal fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <!-- Off-canvas Area-->
+
+        <div class="extra-info theme-bg">
+            <div class="close-icon menu-close">
+                <button>
+                    <i class="las la-times"></i>
+                </button>
+            </div>
+            <div class="logo-side mb-30">
+                <div class="logo">
+                    <img src="assets/img/logo-white.png" alt="">
+                </div>
+            </div>
+            <div class="side-info">
+                <div class="contact-list mb-40">                    
+                    <p>We must explain to you how all seds this mistakens idea off denouncing</p>
+                    <img src="assets/img/offcanvas-img.jpg" alt="">
+    
+                    <div class="mt-30 mb-30">
+                        <a href="contact.html" class="theme-btn">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="social-area-wrap">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a> 
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a> 
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a> 
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="offcanvas-overlay"></div>
+
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+
+    <!--  JS -->
+    <script src="/js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Wow JS -->
+    <script src="/js/wow.min.js"></script>
+    <!-- Way Points JS -->
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <!-- Counter Up JS -->
+    <script src="/js/jquery.counterup.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="/js/slick.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="/js/magnific-popup.min.js"></script>    
+    <!-- Sticky JS -->
+    <script src="/js/jquery.sticky.js"></script>
+    <!-- Nice Select JS -->
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <!-- Appear JS -->
+    <script src="/js/jquery.appear.min.js"></script>    
+    <!-- Odometer JS -->    
+    <script src="/js/odometer.min.js"></script>    
+    <!-- Back To Top JS -->
+    <script src="/js/backToTop.js"></script>
+    <!-- Metis Menu JS -->
+    <script src="/js/metismenu.js"></script>            
+    <!-- Main JS -->
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>

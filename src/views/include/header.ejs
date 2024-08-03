@@ -1,0 +1,117 @@
+
+
+<div id="shikor_preloader">
+  <div id="shikor_circle_loader"></div>
+  <div class="shikor_loader_logo"><img src=" <% if (store.data[0].logo1 != null) { %>
+    <%= "/api/transform/"+ JSON.parse(store.data[0].logo1)%>
+    
+<% } else {  %>
+  <%= `img/demo/favicon.png ` 
+  %>
+<% } %>" alt="Preload"></div>
+</div>
+
+
+<div class="header-top-area theme-bg">
+    <div class="container">
+        <div class="row"> 
+            <div class="col-xl-8 col-lg-8">                    
+                <span><i class="fa-solid fa-location-dot"></i><%= address.data[0].address %></span>
+                <!-- <span><i class="fa-solid fa-clock"></i>Sunday - Friday: 9 am - 8 pm</span> -->
+            </div>
+            <div class="col-xl-4 col-lg-4 text-end">
+                <div class="social-area">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a> 
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a> 
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a> 
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>            
+    </div>
+ </div>
+
+<div id="header-sticky" class="header-area header-three">
+  <div class="navigation">
+    <div class="container">
+      <div class="header-inner-box">
+        <div class="logo">
+          <a href="/"><img src="<% if (store.data[0].logo2 != null) { %>
+            <%= "/api/transform/"+ JSON.parse(store.data[0].logo2)  %>
+        <% } else {  %>
+          <%= `img/demo/khushi-logo.png` 
+          %>
+            
+        <% } %>
+           " alt="" /></a>
+        </div>
+
+        <div class="main-menu d-none d-lg-block">
+          <ul>
+            <li>
+              <a href="/">Home<i class="fa-solid"></i></a>
+              <!-- <ul class="sub-menu">
+                            <li><a href="index.html">Home Style 01</a></li>
+                            <li><a href="index-2.html">Home Style 02</a></li>
+                            <li><a href="index-3.html">Home Style 03</a></li> 
+                        </ul> -->
+            </li>
+            <li>
+              <a href="/about">About<i class="fa-solid"></i></a>
+              <!-- <ul class="sub-menu">
+                            <li><a href="about.html">About</a></li>                                    
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="price.html">Pricing Plans</a></li>
+                            <li><a href="faq.html">FAQ Page</a></li>                                    
+                        </ul> -->
+            </li>
+
+            <li>
+              <a href="/products">Products</a>
+              
+            </li>
+
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="mobile-nav-bar d-block col-6 d-lg-none">
+          <div class="mobile-nav-wrap">
+            <div id="hamburger">
+              <i class="las la-bars"></i>
+            </div>
+            <div class="mobile-nav">
+              <button type="button" class="close-nav">
+                <i class="las la-times-circle"></i>
+              </button>
+              <nav class="sidebar-nav">
+                <ul class="metismenu" id="mobile-menu">
+                  <li>
+                    <a class="has-arrow" href="/">Homes</a>
+                    <!-- <ul class="sub-menu">
+                                        <li><a href="index.html">Home - One</a></li>
+                                        <li><a href="index-2.html">Home - Two</a></li>
+                                        <li><a href="index-3.html">Home - Three</a></li> 
+                                    </ul> -->
+                  </li>
+                  <li><a class="" href="/about">About</a></li>
+                  <li>
+                    <a class="" href="/products">Products</a>
+                    <!-- <ul class="sub-menu">
+                      <li><a href="$">Product Details</a></li>
+                    </ul> -->
+                  </li>
+
+                  <li><a href="/contact">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="header-right d-none d-lg-block">
+          <a href="/about" class="bordered-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

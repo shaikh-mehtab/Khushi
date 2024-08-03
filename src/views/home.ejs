@@ -1,0 +1,978 @@
+<% var home=home.data[0]; %>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+        <title>
+            <%= home.webpage_title %>
+        </title>
+
+        <!--Favicon-->
+        <link rel="icon" href="
+        <% if (store.data[0].logo1 != null) { %>
+            <%= "/api/transform/"+ JSON.parse(store.data[0].logo1)%>
+        <% } else {  %>
+          <%= `img/demo/favicon.png ` 
+          %>
+        <% } %>
+        
+        " type="image/jpg">
+
+        <meta name="description" content="<%= home.meta_desc %>" />
+        <meta name="title" content="<%= home.meta_title %>" />
+
+
+
+
+        <%- include('include/head') %>
+
+    </head>
+<style>
+
+    .project-bg {
+        position: relative;
+        width: 100%;
+        height: 500px; /* Adjust the height as needed */
+        overflow: hidden;
+    }
+    
+    .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .img {
+    display: inline-block;
+    max-width: 20%;
+}
+.img {
+    display: inline-block;
+    max-width: 45%;
+}
+    </style>
+
+    <body>
+
+        
+
+
+
+        <!-- Header Area  -->
+
+        <%- include('include/header') %>
+
+
+            <!-- Hero Area -->
+
+            <div id="home-3" class="homepage-slides owl-carousel">
+
+                <% var slider=slider.data %>
+
+                    <% for(var i=0; i<slider.length; i++ ) {%>
+                        <div class="single-slide-item d-flex align-items-center" data-background="<% if (slider[i].slider_image != null) { %>
+            <%= "/api/transform/"+ JSON.parse(slider[i].slider_image)%>
+        <% } else {  %>
+          <%= `img/demo/slider1.png` 
+          %>
+        <% } %>
+        
+        ">
+                            <div class="overlay"></div>
+                            <div class="hero-area-content">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-xl-7 col-lg-8 wow fadeInUp animated" data-wow-delay=".2s">
+                                            <div class="section-title">
+                                                <!-- <h6 class="text-white">Smart Solutions</h6> -->
+                                                <h1 class="text-white">
+                                                    <%=slider[i].slider_title %>
+                                                </h1>
+                                            </div>
+                                            <p class="text-white">
+                                                <%= slider[i].slider_description %>
+                                            </p>
+                                            <!-- <a href="#" class="theme-btn mt-40">Learn More</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                            <!-- <div class="single-slide-item d-flex align-items-center" data-background="img/demo/slider2.png">
+            <div class="overlay"></div>
+            <div class="hero-area-content">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-7 wow fadeInUp animated" data-wow-delay=".2s">
+                            <div class="section-title">
+                                <h6 class="text-white">Smart Solutions</h6>
+                                <h1 class="text-white">Polyester PET Popcorn White <span>Popcorn Whit</span> Results </h1>
+                            </div>
+                            <p class="text-white">Vestibulum rhoncus nisl ac gravida porta. Mauris eu sapien lacus. Etiam molestie justo neque, in convallis massa tempus in.</p>
+                            <a href="#" class="theme-btn mt-40">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+            </div>
+
+            <!-- Feature Setion  -->
+            <!-- <div class="feature-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="single-feature-wrap">
+                        <div class="feat-icon">
+                            <img src="img/feature/2-1.png" alt="">
+                        </div>
+                        <h4>Transport Fusion</h4>
+                        <p>Customer satisfaction is crucial amohlodi business as it lead customer loyalty</p>
+                        <a href="services.html" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="single-feature-wrap">
+                        <div class="feat-icon">
+                            <img src="img/feature/2-2.png" alt="">
+                        </div>
+                        <h4>GoGo Transport</h4>
+                        <p>Customer satisfaction is crucial amohlodi business as it lead customer loyalty</p>
+                        <a href="services.html" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="single-feature-wrap mb-0">
+                        <div class="feat-icon">
+                            <img src="img/feature/2-3.png" alt="">
+                        </div>
+                        <h4>Express Move</h4>
+                        <p>Customer satisfaction is crucial amohlodi business as it lead customer loyalty</p>
+                        <a href="services.html" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+            <!-- About Section  -->
+            <div id="about-3" class="about-section mt-20">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-lg-6 wow fadeInLeft animated" data-wow-delay="200ms">
+                            <div class="about-img-wrap">
+                                <img src="
+                        <% if (home.image != null) { %>
+                            <%= "/api/transform/"+ JSON.parse(home.image)%>
+                        <% } else {  %>
+                          <%= ` img/demo/about.png` 
+                          %>
+                        <% } %>
+                       " height="auto", width="700" alt="">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 wow fadeInUp animated" data-wow-delay="400ms">
+                            <div class="about-content-wrap">
+                                <div class="section-title">
+                                    <h6>About </h6>
+                                    <h2> <span>
+                                            <%= home.home_title %>
+                                        </span> <br> </h2>
+                                </div>
+                                <p><%- home.description %></p>
+
+                                <!-- <div class="feature-service">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="single-feat-service">
+                                        <div class="feature-icon">
+                                            <img src="img/feature/3-1.png" alt="">
+                                        </div>
+                                        <div class="feature-content">
+                                            <h4>Supply Chain Consulting</h4>
+                                            <p>Overall, professional the man <br> Engineers play</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-feat-service">
+                                        <div class="feature-icon">
+                                            <img src="img/feature/3-2.png" alt="">
+                                        </div>
+                                        <div class="feature-content">
+                                            <h4>E-commerce Fulfillment</h4>
+                                            <p>Overall, professional the man <br> Engineers play</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div> -->
+                                <a href="/about" class="theme-btn mt-50">Learn More <i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section  -->
+            <!-- <div class="video-area section-padding pt-0 pb-0">
+        <div class="container">
+            <div class="video-section video-bg-two">    
+                <div class="overlay"></div>
+                <div class="video-inner-box">            
+                    <div class="play-btn">
+                        <a href="https://www.youtube.com/watch?v=KEFt2quibkg" class="mfp-iframe"><i class="fa-solid fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+            <!-- Quotation Section  -->
+
+
+            <!-- Newsletter Section  -->
+            <div class="newsletter-section-two mt-5">
+                <div class="container">
+                    <div class="newsletter-content d-flex align-items-center justify-content-between">
+                        <div class="section-title wow fadeInUp animated" data-wow-delay="200ms">
+                            <h2>Subscribe newsletter <br> For Any Update</h2>
+                        </div>
+                        <div class="subscribed-form d-flex wow fadeInUp animated" data-wow-delay="200ms">
+                            <form action="#">
+                                <input type="email" placeholder="Enter Your Mail">
+                                <input type="submit" value="Subscribe Now">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section  -->
+            <!-- <div class="team-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="section-title">
+                        <h6>Team member</h6>
+                        <h2>Empowering Our Team's Productivity <span>Productivity</span></h2>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur. Amet lectus mi ultricies the dictum facilisis thr sem. Imperdiet massa turpis sit Lorem</p>
+                    <a href="#" class="theme-btn mt-60 d-none d-lg-inline-block">All Members <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="single-team-member">
+                        <h4>Bessie Cooper</h4>
+                        <p>Founder</p>
+                        <div class="team-img">
+                            <img src="img/team/3-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="400ms">
+                    <div class="single-team-member">
+                        <h4>Jerome Bell</h4>
+                        <p>Co-founder</p>
+                        <div class="team-img">
+                            <img src="img/team/3-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+            <!-- Project Section  -->
+            <div class="project-section project-three section-padding pt-0 pb-90">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-xl-6 col-lg-6 wow fadeInUp animated" data-wow-delay="200ms">
+                            <div class="section-title mb-0">
+                                <h6>Our Products</h6>
+                                <h2><%= home.product_title%></h2>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 text-end wow fadeInUp animated" data-wow-delay="400ms">
+                            <a href="/products" class="theme-btn d-none d-lg-inline-block">All Products</a>
+                        </div>
+                    </div>
+                    <div class="row mt-60">
+
+                        <% var product=product.data %>
+
+                <% for(var i=0; i<product.length; i++ ) {%>
+                    <div class="col-md-6">
+                        <a href="/product/<%= product[i].slug %>" class="single-project-wrapper">
+                            <div class="project-bg">
+                                <img class="project-image" src="<% if (product[i].image != null) { %>
+                                    <%= "/api/transform/"+ JSON.parse(product[i].image)%>
+                                <% } else {  %>
+                                  <%= `img/demo/favicon.png` %>
+                                <% } %>" alt="">
+                                <div class="project-details">
+                                    <h4><%= product[i].title %></h4>
+                                    <!-- <p>Business Intelligence</p> -->
+                                </div>
+                            </div>                            
+                        </a>
+                    </div>
+                    <%}%>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Section  -->
+            <!-- <div class="price-section price-three section-padding pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-7 text-center wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="section-title">
+                        <h6>Our Pricing</h6>
+                        <h2>the Art of the <span>Efficient</span> best ever Movement</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-60">
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="single-price-item gray-bg">                        
+                        <h4>Basic</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                        <div class="price-icon">
+                            <img src="img/price/1.png" alt="">
+                        </div>
+                        <span class="price-amount">$19</span><span>/month</span> 
+                        <a href="#" class="primary-btn">Start Now</a>
+                        <div class="price-feature-list">
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check"></i>Market research helps business Idea</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Advanced Logistics Solutions</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Efficient Transportation Services</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Strategic Transport Solutions</li>                                
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="400ms">
+                    <div class="single-price-item gray-bg">                        
+                        <h4>Consult</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                        <div class="price-icon">
+                            <img src="img/price/2.png" alt="">
+                        </div>
+                        <span class="price-amount">$29</span><span>/month</span> 
+                        <a href="#" class="primary-btn">Start Now</a>
+                        <div class="price-feature-list">
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check"></i>Market research helps business Idea</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Advanced Logistics Solutions</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Efficient Transportation Services</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Strategic Transport Solutions</li>                                
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="600ms">
+                    <div class="single-price-item gray-bg">                        
+                        <h4>Pro</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing.</p>
+                        <div class="price-icon">
+                            <img src="img/price/2.png" alt="">
+                        </div>
+                        <span class="price-amount">$69</span><span>/month</span> 
+                        <a href="#" class="primary-btn">Start Now</a>
+                        <div class="price-feature-list">
+                            <ul>
+                                <li><i class="fa-solid fa-circle-check"></i>Market research helps business Idea</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Advanced Logistics Solutions</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Efficient Transportation Services</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Strategic Transport Solutions</li>                                
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div> -->
+
+            <!-- Funfacts Section  -->
+            <!-- <div class="funfacts-section section-padding pt-0">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-3 col-lg-3 col-md-3 text-center">
+                            <div class="single-funfact-wrap">
+                                <div class="funfact-icon">
+                                    <img src="img/funfacts/1.png" alt="">
+                                </div>
+                                <h2><span class="odometer" data-count="30">000</span>+</h2>
+                                <p>Team Member</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 text-center">
+                            <div class="single-funfact-wrap">
+                                <div class="funfact-icon">
+                                    <img src="img/funfacts/2.png" alt="">
+                                </div>
+                                <h2><span class="odometer" data-count="10">000</span>+</h2>
+                                <p>Winning Award</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 text-center">
+                            <div class="single-funfact-wrap">
+                                <div class="funfact-icon">
+                                    <img src="img/funfacts/3.png" alt="">
+                                </div>
+                                <h2><span class="odometer" data-count="16">000</span>+</h2>
+                                <p> Products</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3 text-center">
+                            <div class="single-funfact-wrap">
+                                <div class="funfact-icon">
+                                    <img src="img/funfacts/4.png" alt="">
+                                </div>
+                                <h2><span class="odometer" data-count="20">00</span>+</h2>
+                                <p>Client Review</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="funfacts-section section-padding pt-0">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <% if (fnf && fnf.data.length> 0) { %>
+                            <% fnf.data.forEach(fact=> { %>
+                                <div class="col-xl-3 col-lg-3 col-md-3 text-center">
+                                    <div class="single-funfact-wrap">
+                                        <div class="funfact-icon">
+                                            <img src="
+                                                <% if (fact.icon != null) { %>
+                                                    <%= `/api/transform/${JSON.parse(fact.icon)[0]}` %>
+                                                <% } else { %>
+                                                    img/demo/fact.icon
+                                                <% } %>
+                                            " 
+                                            height="auto"
+                                            width="80px"
+                                            alt="">
+                                        </div>
+                                        <h2><span class="odometer" data-count="<%= fact.number %>">000</span>+</h2>
+                                        <p>
+                                            <%= fact.title %>
+                                        </p>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                    <% } else { %>
+                                        <p>No fact and figure data available</p>
+                                        <% } %>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Service Section  -->
+
+    <div class="service-section service-three section-padding pt-240 bg-cover" style="background-color: #013B4F ;"
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-6 text-center wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="section-title pb-0">
+                        <h6 class="text-white">Our Core Values</h6>
+                        <h2 class="text-white">Our company is driven by clear vision for future</h2>
+                    </div>                    
+                </div>                
+            </div>
+            <div class="row mt-60">
+                <% var cv=cv.data %>
+
+                <% for(var i=0; i<cv.length; i++ ) {%>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="single-service-wrap">
+                        <div class="service-img">
+                            <img src=" <% if (cv[i].image != null) { %>
+                                <%= "/api/transform/"+ JSON.parse(cv[i].image)%>
+                            <% } else {  %>
+                              <%= `img/demo/favicon.png ` 
+                              %>
+                            <% } %>"   height="auto"
+                            width="630px" alt="">
+                            <div class="service-icon">
+                                <img src="<% if (cv[i].icon != null) { %>
+                                    <%= "/api/transform/"+ JSON.parse(cv[i].icon)%>
+                                <% } else {  %>
+                                  <%= `img/demo/favicon.png ` 
+                                  %>
+                                <% } %>"
+                                
+                                height="auto"
+                                width="60px">
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h4><%= cv[i].title %></h4>
+                            <p><%= cv[i].des %></p>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+
+
+
+            <!-- <div class=" theme-bg section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 wow fadeInUp animated" data-wow-delay="200ms">
+                            <div class="contact-form-wrap">
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" placeholder="Your Name">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="email" placeholder="Your E-mail">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" placeholder="Phone Number">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select name="freight">
+                                                <option value="Choose a Option">Choose a Option</option>
+                                                <option value="Air Freight">Air Freight</option>
+                                                <option value="Air Freight">Ocean Freight</option>
+                                                <option value="Air Freight">Road Freight</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea name="message" id="message" cols="30" rows="10"
+                                                placeholder="Message here..."></textarea>
+                                            <input type="submit" value="Appointment Now">
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="offset-xl-1 col-xl-5 offset-lg-1 col-lg-5 wow fadeInUp animated"
+                            data-wow-delay="400ms">
+                            <div class="section-title">
+                                <h6 class="text-white">Stay Connected</h6>
+                                <h2 class="text-white">Efficiency <span>Motion</span> In <br> Every Mile</h2>
+                            </div>
+                            <p class="text-white">Lorem ipsum dolor sit amet consecter. Amet lectus mi ultricies dictum
+                                facilisis thr sem. Imperdiet massa</p>
+                            <div class="award-wrap">
+                                <div class="medal-icon">
+                                    <img src="img/medal.png" alt="">
+                                </div>
+                                <div class="award-info">
+                                    <h4 class="text-white">Best Awarded</h4>
+                                    <p class="text-white">Lorem Ipsum is simply dummy <br> text of the printing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Testimonial Section  -->
+            <!-- <div id="testimonial-3" class="testimonial-section-three section-padding pt-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 wow fadeInLeft animated" data-wow-delay="200ms">
+                    <div class="testimonial-img-wrap">
+                        <img src="img/demo/testimonial.png" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 wow fadeInUp animated" data-wow-delay="400ms">
+                    <div class="section-title">
+                        <h6>Clients Reviews</h6>
+                        <h2><span>Testimonial</span> </h2>
+                    </div>
+                    <div class="testimonial-slider">
+                        <div class="single-testimonial-wrap">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <img src="img/quote-icon.png" alt="">
+                                </div>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p>Et nunc purus purus egestas.Nisi ultrices morb dui placerat nisi enim pharetra. Quis volutpat potenti vite Et nunc purus purus egest Nisi ultrices Et nunc purus purus egestas.Nisi ultrices morb dui placerat nisi enim pharetra</p>
+                            </div>
+                            <div class="testimonial-author">    
+                                <div class="author-img">
+                                    <img src="img/author-3.png" alt="">
+                                </div>                            
+                                <h4>Jane Cooper</h4>                                
+                            </div>
+                        </div>
+                        <div class="single-testimonial-wrap">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <img src="img/quote-icon.png" alt="">
+                                </div>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p>Et nunc purus purus egestas.Nisi ultrices morb dui placerat nisi enim pharetra. Quis volutpat potenti vite Et nunc purus purus egest Nisi ultrices Et nunc purus purus egestas.Nisi ultrices morb dui placerat nisi enim pharetra</p>
+                            </div>
+                            <div class="testimonial-author">    
+                                <div class="author-img">
+                                    <img src="img/author-3.png" alt="">
+                                </div>                            
+                                <h4>Jane Cooper</h4>                                
+                            </div>
+                        </div>
+                        <div class="single-testimonial-wrap">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <img src="img/quote-icon.png" alt="">
+                                </div>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p>Et nunc purus purus egestas.Nisi ultrices morb dui placerat nisi enim pharetra. Quis volutpat potenti vite Et nunc purus purus egest Nisi ultrices Et nunc purus purus egestas.Nisi ultrices morb dui placerat nisi enim pharetra</p>
+                            </div>
+                            <div class="testimonial-author">    
+                                <div class="author-img">
+                                    <img src="img/author-3.png" alt="">
+                                </div>                            
+                                <h4>Jane Cooper</h4>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+            <div id="testimonial-3" class="testimonial-section-three section-padding pt-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 wow fadeInLeft animated" data-wow-delay="200ms">
+                            <% for(var i=0; i<testimonials.data.length; i++ ) { %>
+                                <div class="testimonial-img-wrap">
+                                    <img src="
+                                <% if (testimonials.data[i].image != null) { %>
+                                    <%= `/api/transform/${JSON.parse(testimonials.data[i].image)[0]}` %>
+                                <% } else { %>
+                                    img/demo/testimonial.png
+                                <% } %>
+                            " alt="">
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 wow fadeInUp animated" data-wow-delay="400ms">
+                            <div class="section-title">
+                                <h6>Clients Reviews</h6>
+                                <h2><span>Testimonial</span></h2>
+                            </div>
+                            <div class="testimonial-slider">
+                                <% testimonials.data.forEach(testimonial=> { %>
+                                    <div class="single-testimonial-wrap">
+                                        <div class="testimonial-content">
+                                            <!-- <div class="quote-icon">
+                                        <img src="img/quote-icon.png" alt="">
+                                    </div> -->
+                                            <div class="rating">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <p>
+                                                <%= testimonial.message %>
+                                            </p>
+                                        </div>
+                                        <div class="testimonial-author">
+                                            <!-- <div class="author-img">
+                                        <img src="<%= JSON.parse(testimonial.image)[0] %>" alt="">
+                                    </div> -->
+                                            <h4>
+                                                <%= testimonial.name %>
+                                            </h4>
+                                            <span>
+                                                <%= testimonial.designation %>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+ 
+            <!-- Service Section  -->
+
+            <!-- <div class="service-section service-three section-padding pt-240 bg-cover" data-background="img/service-bg.jpg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-6 text-center wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="section-title pb-0">
+                        <h6 class="text-white">our services</h6>
+                        <h2 class="text-white">Our company is driven by clear vision for future</h2>
+                    </div>                    
+                </div>                
+            </div>
+            <div class="row mt-60">
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="single-service-wrap">
+                        <div class="service-img">
+                            <img src="img/service/1-1.jpg" alt="">
+                            <div class="service-icon">
+                                <img src="img/service/1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h4>Express Transport</h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <a href="services.html" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="400ms">
+                    <div class="single-service-wrap">
+                        <div class="service-img">
+                            <img src="img/service/1-2.jpg" alt="">
+                            <div class="service-icon">
+                                <img src="img/service/2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h4>Aero Logix</h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <a href="services.html" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="600ms">
+                    <div class="single-service-wrap mb-0">
+                        <div class="service-img">
+                            <img src="img/service/1-3.jpg" alt="">
+                            <div class="service-icon">
+                                <img src="img/service/3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h4>Speedy Transit</h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <a href="services.html" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+            <!-- FAQ Section  -->
+            <!-- <div class="faq-section section-padding pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="section-title">
+                        <h6>Ask Question</h6>
+                        <h2>Fast furious <span>transport</span> all <br> of the logistics</h2>
+                    </div>
+                    <div class="faq-wrap mt-0">
+                        <div class="cp-custom-accordion mt-60">
+                            <div class="accordions" id="accordionExample">
+                                <div class="accordion-items">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-buttons" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <span>01</span>What is the role logistics the quality of life?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            It is a long established fact t a reader will be distracted by the mabn  readable content of ajlijkl page when looking at its layout. Lorem Ipsum is simpl
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-items">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <span>02</span>What does the category encompass?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            It is a long established fact t a reader will be distracted by the mabn  readable content of ajlijkl page when looking at its layout. Lorem Ipsum is simpl
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-items">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <span>03</span>Is mental health support logistics category?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            It is a long established fact t a reader will be distracted by the mabn  readable content of ajlijkl page when looking at its layout. Lorem Ipsum is simpl
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 wow fadeInRight animated" data-wow-delay="200ms">
+                    <div class="faq-img-wrap">
+                        <img src="img/faq-img.png" alt="">
+                        <div class="team-card d-none d-md-block">
+                            <img src="img/team-card.png" alt="">
+                        </div>
+                        <div class="achievement-wrap">
+                            <div class="medal-icon">
+                                <img src="img/medal_dark.png" alt="">
+                            </div>
+                            <div class="achievement-content">
+                                <h3>230+</h3>
+                                <h6>Award Win</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+            <!-- Blog Section  -->
+            <!-- <div id="blog-3" class="blog-section section-padding pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-6 wow fadeInUp animated" data-wow-delay="200ms">
+                    <div class="section-title text-center">
+                        <h6>Blog and News</h6>
+                        <h2>Mastering the Art of Efficient Movement</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-60">
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="200ms">
+                    <a href="blog-details.html" class="single-blog-item">
+                        <div class="blog-img">
+                            <img src="img/blog/3-1.jpg" alt="">
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i>October 19, 2023</span>
+                                <span><i class="fa-regular fa-user"></i>By admin</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-wrap">
+                            <h4>Drive Efficiency with The most a best in Logistics</h4>
+                            <p>Corporate businesses typically offerings an services such as man or consulting the man strategic planning </p>
+                            <a href="blog-details.html" class="blog-details-link">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="400ms">
+                    <a href="blog-details.html" class="single-blog-item">
+                        <div class="blog-img">
+                            <img src="img/blog/3-2.jpg" alt="">
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i>October 19, 2023</span>
+                                <span><i class="fa-regular fa-user"></i>By admin</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-wrap">
+                            <h4>Partner in Logistics Excellence  with The most</h4>
+                            <p>Corporate businesses typically offerings an services such as man or consulting the man strategic planning </p>
+                            <a href="blog-details.html" class="blog-details-link">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp animated" data-wow-delay="600ms">
+                    <a href="blog-details.html" class="single-blog-item">
+                        <div class="blog-img">
+                            <img src="img/blog/3-3.jpg" alt="">
+                            <div class="blog-meta">
+                                <span><i class="fa-solid fa-calendar-days"></i>October 19, 2023</span>
+                                <span><i class="fa-regular fa-user"></i>By admin</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-wrap">
+                            <h4>Unlocking Your Logistics  with a The  Potential</h4>
+                            <p>Corporate businesses typically offerings an services such as man or consulting the man strategic planning </p>
+                            <a href="blog-details.html" class="blog-details-link">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+            <!-- Footer Area  -->
+            <%- include('include/footer') %>
+
+
+                <!-- Search Dropdown -->
+
+                <div class="search-popup">
+                    <span class="search-back-drop"></span>
+
+                    <div class="search-inner">
+                        <div class="container">
+                            <div class="logo">
+                                <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
+                            </div>
+                            <button class="close-search"><span class="la la-times"></span></button>
+                            <form method="post" action="index.html">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" value="" placeholder="Type your keyword"
+                                        required="">
+                                    <button type="submit"><i class="fal fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- back to top start -->
+                <div class="progress-wrap">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                    </svg>
+                </div>
+
+                <%- include('include/script') %>
+
+
+    </body>
+
+    </html>

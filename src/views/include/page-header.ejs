@@ -1,0 +1,112 @@
+<div id="shikor_preloader">
+    <div id="shikor_circle_loader"></div>
+    <div class="shikor_loader_logo"><img src=" <% if (store.data[0].logo1 != null) { %>
+      <%= "/api/transform/"+ JSON.parse(store.data[0].logo1)%>
+  <% } else {  %>
+    <%= `img/demo/favicon.png ` 
+    %>
+  <% } %>" alt="Preload"></div>
+  </div>
+
+  
+<div class="header-top-area theme-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8">
+                <span><i class="fa-solid fa-envelope"></i><%= address.data[0].email %></span>
+                <span><i class="fa-solid fa-location-dot"></i><%= address.data[0].address %></span>
+                <span><i class="fa-solid fa-phone"></i><%= address.data[0].phone_number %></span>
+            </div>
+            <div class="col-xl-4 col-lg-4 text-end">
+                <div class="social-area">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a> 
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a> 
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a> 
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>            
+        </div>
+    </div>
+    </div>
+
+
+<!-- Header Area  -->
+
+<div id="header-sticky" class="header-area header-two bread-header">        
+    <div class="navigation">
+        <div class="container">
+            <div class="header-inner-box">                    
+
+                <div class="logo">
+                    <a href="/"><img src="<% if (store.data[0].logo2 != null) { %>
+                        <%= "/api/transform/"+ JSON.parse(store.data[0].logo2)  %>
+                    <% } else {  %>
+                      <%= `img/demo/khushi-logo.png` 
+                      %>
+                        
+                    <% } %>" alt=""></a>
+                </div>
+
+                <div class="main-menu d-none d-lg-block">
+                    <ul>
+                        <li><a href="/">Home</i></a>
+                            
+                        </li>
+                        <li><a href="/about">About</i></a>
+                            
+                        </li>
+                        
+                        <li><a href="/products">Products</i></a>
+                            
+                        </li>
+                        
+                        
+                        <li><a href="/contact">Contact Us</a></li>
+                    </ul>                            
+                </div>
+
+                <div class="mobile-nav-bar d-block col-6 d-lg-none">
+                    <div class="mobile-nav-wrap">                    
+                        <div id="hamburger">
+                            <i class="las la-bars"></i>                                    
+                        </div>
+                        <!-- mobile menu - responsive menu  -->
+                        <div class="mobile-nav">
+                            <button type="button" class="close-nav">
+                                <i class="las la-times-circle"></i>
+                            </button>
+                            <nav class="sidebar-nav">
+                                <ul class="metismenu" id="mobile-menu">
+                                    <li><a  href="/">Homes</a>
+                                        
+                                    </li>
+                                    <li><a  href="/about">About</a>
+                                       
+                                    </li>
+                                    <li><a  href="/products">products</a>
+                                       
+                                    </li>
+                                 
+                                    <li><a href="/contact">Contact</a></li>
+                                    
+                                </ul>
+                            </nav>                                  
+                        </div>                            
+                    </div>                        
+                </div>     
+                <div class="header-right d-none d-lg-flex">
+                    <!-- <div class="search-trigger">
+                        <a href="#"><i class="fal fa-search"></i></a>
+                    </div>       -->
+                    <!-- <div class="header-btn">
+                        <div class="menu-trigger">
+                            <span class="lines"></span>
+                            <span class="lines"></span>                                
+                        </div>
+                    </div>              -->
+                </div>                   
+            </div>
+        </div>
+    </div>        
+</div>

@@ -1,0 +1,39 @@
+.quotation-section{
+    background: #13495B;
+    position: relative;
+}
+
+.quotation-section:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 230px;
+    background: #013B4F;
+    margin-top: -230px;
+}
+
+.quotation-section:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    background: #013B4F;
+    margin-bottom: -130px;
+}
+
+.award-wrap p br {
+    @media #{$xs}{
+        display: none;
+    }
+    
+}
+
+.quotation-section input[type="submit"]:hover{
+    background: #fff;
+    border-color: #fff;
+    color: $text-black;
+}

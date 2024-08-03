@@ -1,0 +1,98 @@
+.appointment-inner {
+    height: 470px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 50px;
+    border-radius: 5px;
+    margin-top: -135px;
+    position: relative;
+    z-index: 9;
+    @media #{$xs}{
+        height: 520px;
+    }
+}
+
+.contact-wrap {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+
+    & .icon {
+        background: rgba(217, 217, 217, 0.1);
+        width: 65px;
+        height: 65px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        i {
+            font-size: 24px;
+            color: #fff;
+        }
+    }
+
+    .contact-details{
+        h6 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 27px;
+            @media #{$xs} {
+                font-size: 16px;            
+              }
+        }
+        
+        p {
+            color: #fff;
+        }
+    }    
+}
+
+
+
+.apppointment-form-wrap {
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.08);
+    @media #{$md}{
+        margin-top: 30px;
+    }
+    @media #{$xs}{
+        display: none;
+    }
+    h2 {
+        font-size: 50px;
+        font-weight: 600;
+    }
+    form {
+        margin-top: 30px;
+        input, textarea {
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        textarea {
+            height: 130px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            &:hover{
+                background: $primary_color;
+                color: #fff;
+            }
+        }
+        input::placeholder, textarea::placeholder{
+            color: $text-gray ;
+        }
+    }
+}
+
+
+.appointment-section.pb-180 {
+    @media #{$xs}{
+        padding-bottom: 60px;
+    }
+    
+  }

@@ -1,0 +1,20 @@
+.client-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.single-client-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    border-radius: 8px;
+    img {
+        width: inherit !important;
+        opacity: .5;
+    }
+}
+
+
+
+

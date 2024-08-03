@@ -1,0 +1,195 @@
+.faq-wrap{
+  @media #{$md}{
+    margin-top: 150px;
+  }
+}
+
+
+
+// CP Custom Accordion 
+
+.cp-custom-accordion .accordion-buttons {    
+    position: relative;
+    width: 100%;
+    padding: 20px 0 25px;
+    background-color: #fff;
+    color: $primary_color;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;    
+    line-height: 30px;
+    border: none;
+    border-bottom: 1px solid #eee;    
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @media #{$lg} {
+      padding: 20px 30px;
+      font-size: 18px;
+      line-height: 30px;
+  }
+    @media #{$xs} {
+      padding: 20px 0px;
+      font-size: 18px;
+      line-height: 30px;
+      padding-left: 0;
+  }
+
+  }
+
+  .cp-custom-accordion .accordion-buttons span {
+    font-size: 15px;
+    color: #fff;
+    background: #C7CB36;
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    @media #{$xs}{
+      flex: 0 0 auto;
+      display: none;
+    }
+}
+  
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .cp-custom-accordion .accordion-buttons {
+      padding: 25px 28px;      
+    }
+  }
+  
+  .cp-custom-accordion .accordion-buttons::after {
+    position: absolute;
+    content: "\f068";
+    font-family: "Line Awesome Free";
+    top: 22%;
+    transform: rotate(-180deg);
+    right: 0;
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 1;
+    color: $primary_color;
+    border: 1.5px solid #ddd;
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;    
+}
+  @media (max-width: 767px) {
+    .cp-custom-accordion .accordion-buttons::after {
+      top: 12px;
+      right: 0;
+      font-size: 16px;
+    }
+  }
+  .cp-custom-accordion .accordion-buttons.collapsed::after {
+    content: "\f067";
+  }
+  .cp-custom-accordion .collapsed {
+    position: relative;    
+  }
+  .cp-custom-accordion .accordion-body {
+    background-color: #fff;
+    color: #878787;
+    padding: 25px 0;        
+    padding-right: 60px;
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+    z-index: 1;
+    text-align: start;
+  }
+
+  @media (max-width: 767px) {
+    .cp-custom-accordion .accordion-body {
+      font-size: 16px;
+      padding-right: 30px;
+      padding-left: 0;
+    }
+  }
+
+  // FAQ # 02
+
+  .faq-wrapper {
+    background: #F5F7FA;
+    padding: 60px 45px;
+    margin-bottom: -150px;
+    margin-top: 100px;
+    margin-left: 20px;
+    border-radius: 5px;
+    @media #{$md}{
+      margin-bottom: 100px;
+    }
+    @media #{$xs}{
+      margin-bottom: 100px;
+      margin-left: 0;
+      padding: 20px;
+    }
+  
+
+    .cp-custom-accordion .accordion-buttons{
+      background:#F5F7FA;
+    }
+    .cp-custom-accordion .accordion-body{
+      background: #F5F7FA;
+    }
+}
+
+.faq-bg {
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+
+// FAQ # 03
+
+.faq-img-wrap {
+  position: relative;
+  @media #{$md}{
+    margin-top: 60px;
+  }
+  @media #{$xs}{
+    margin-top: 60px;
+  }
+}
+
+.team-card {
+  position: absolute;
+  top: 30px;
+  left: -30px;
+}
+
+.faq-section{
+  .achievement-wrap {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    background: #fff;
+    display: inline-flex;
+    padding: 30px;
+    gap: 20px;
+    border-radius: 5px;
+    border: 1px solid $text-black;
+    align-items: center;
+    @media #{$md}{
+      right: 65px;
+    }
+  }
+  
+  .achievement-wrap h3 {
+    font-size: 30px;
+    font-weight: 600;
+  }
+}
+
+.cp-custom-accordion.mt-60{
+  @media #{$xs}{
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,61 @@
+
+.breadcrumb-area {
+    background-image: url(../img/bread-bg.png);
+}
+
+.breadcrumb-area {
+    height: 400px;
+    background-size: cover;
+    background-position: center bottom;
+    background-color: #ddd;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin-top: -50px;
+}
+
+.breadcrumb-area .breadcrumb-title h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 45px;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-top: 50px;
+}
+
+.breadcrumb-area h6 a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.breadcrumb-area h6 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.header-area.header-two.bread-header .header-inner-box {
+    background: #fff;
+}
+
+.header-area.header-two.bread-header .header-btn {
+    background: #013B4F;
+    color: #fff;
+}
+
+.header-area.header-two.bread-header .header-btn span {
+    background: #fff;
+}
+
+.header-area.header-two.bread-header.header-sticky{
+    background: #fff;
+}
+
+.header-area.header-two.bread-header .main-menu li:hover > a {
+    color: $secondary_color;
+}
+

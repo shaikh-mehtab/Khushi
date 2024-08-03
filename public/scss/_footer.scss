@@ -1,0 +1,131 @@
+.footer-area {
+    padding-top: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: -150px;
+    position: relative;
+    z-index: -1;
+
+    @media #{$xs}{
+        padding-top: 180px;
+    }
+
+
+    .social-area a i {
+		font-size: 20px;
+		color: #fff;
+		margin-right: 20px;
+        &:hover{
+			color: $secondary_color;
+		}
+	}
+
+    .single-contact-info {
+        display: flex;
+        margin-bottom: 30px;
+    }
+    
+    .contact-info-wrap {
+        margin-top: 60px;
+    
+        .contact-icon {
+            position: relative;
+            top: -4px;
+    
+            i {
+                color: #C7CB36;
+            }
+        }
+    
+        .contact-details {
+            padding-left: 30px;
+    
+            h6 {
+                color: #fff;
+                font-size: 18px;
+                font-weight: 600;
+            }
+    
+            p {
+                color: #fff;
+                font-weight: 400;
+            }
+        }
+    }
+    
+    .footer-widget h5 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    
+    .list-item {
+        margin-top: 60px;
+        @media #{$xs}{
+            margin-top: 30px;
+        }
+    }
+    
+    .list-item ul li {
+        display: block;
+    
+        a {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+    
+        i {
+            color: #C7CB36;
+            margin-right: 15px;
+        }
+    }
+}
+
+
+
+.newsletter-form {
+    margin-top: 60px;
+    @media #{$xs}{
+        margin-top: 30px;
+    }
+}
+
+.newsletter-form input {
+    border-color: #1F5364;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-bottom span {
+    color: #fff;
+    padding: 27px 0;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1f4856;
+    display: flex;
+    align-items: center;
+    @media #{$xs}{
+        text-align: center;
+    }
+}
+
+.footer-bottom ul li a {
+    color: #fff;
+    margin-right: 20px;
+}
+
+.footer-area-three{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 0;
+}
+
+.footer-bottom.mt-80 {
+    @media #{$xs}{
+        margin-top: 40px;
+    }
+    
+}

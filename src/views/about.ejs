@@ -1,0 +1,223 @@
+<% var about = about.data[0] %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+
+    <title><%= about.page_title %></title>
+
+    <!--Favicon-->
+    <link
+      rel="icon"
+      href=" <% if (store.data[0].logo1 != null) { %>
+        <%= "/api/transform/"+ JSON.parse(store.data[0].logo1)%>
+    <% } else {  %>
+      <%= `assets/img/favicon.png` 
+      %>
+    <% } %>"
+      type="image/jpg"
+    />
+
+    <%- include('include/head') %>
+  </head>
+
+  <body>
+    <!-- Pre Loader -->
+
+    <!-- Header Top Area -->
+
+    <%- include('include/page-header') %>
+
+    <!-- Breadcrumb Area  -->
+
+    <div
+      class="breadcrumb-area"
+      style="
+        background-image: url(<%if(about.cover_image!=null){%><%="/api/transform/" + JSON.parse(
+            about.cover_image
+          )%><%}else{%><%=`assets/img/favicon.png`%><%}%>);
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumb-title">
+              <h1><%= about.breadcumb_name %></h1>
+              <h6><a href="/">Home</a> / <%= about.breadcumb_name %></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section  -->
+    <div id="about-3" class="about-section mt-50 mb-20">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-lg-6">
+            <div class="about-img-wrap">
+              <img
+                src="
+                        <% if (about.about_img != null) { %>
+                            <%= "/api/transform/"+JSON.parse(about.about_img)%>
+                        <% } else {  %>
+                          <%= ` img/demo/about.png` 
+                          %>
+                        <% } %>
+                       "
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6">
+            <div class="about-content-wrap">
+              <div class="section-title">
+                <!-- <h6>ABOUT US</h6> -->
+                <h6>About Us</h6>
+                <h2><%= about.about_title %></h2>
+              </div>
+              <p><%- about.about_des %></p>
+              <div class="feature-service">
+                <!-- <div class="row">
+                                <div class="col-md-6">
+                                    <div class="single-feat-service">
+                                        <div class="feature-icon">
+                                            <img src="assets/img/feature/3-1.png" alt="">
+                                        </div>
+                                        <div class="feature-content">
+                                            <h4>Supply Chain Consulting</h4>
+                                            <p>Overall, professional the man <br> Engineers play</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-feat-service">
+                                        <div class="feature-icon">
+                                            <img src="assets/img/feature/3-2.png" alt="">
+                                        </div>
+                                        <div class="feature-content">
+                                            <h4>E-commerce Fulfillment</h4>
+                                            <p>Overall, professional the man <br> Engineers play</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> -->
+              </div>
+              <!-- <a href="about.html" class="theme-btn mt-50">Learn More <i class="fa-solid fa-arrow-right"></i></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="funfacts-section section-padding pt-0 mt-80">
+      <div class="container">
+        <div class="row justify-content-center">
+          <% if (fnf && fnf.data.length> 0) { %> <% fnf.data.forEach(fact=> { %>
+          <div class="col-xl-3 col-lg-3 col-md-3 text-center">
+            <div class="single-funfact-wrap">
+              <div class="funfact-icon ">
+                <img
+                  src="
+                                        <% if (fact.icon != null) { %>
+                                            <%= `/api/transform/${JSON.parse(fact.icon)[0]}` %>
+                                        <% } else { %>
+                                            img/demo/fact.icon
+                                        <% } %>
+                                    "
+                  height="auto"
+                  width="80px"
+                  alt=""
+                />
+              </div>
+              <h2>
+                <span class="odometer" data-count="<%- fact.number %>">000</span
+                >+
+              </h2>
+              <p><%= fact.title %></p>
+            </div>
+          </div>
+          <% }) %> <% } else { %>
+          <p>No fact and figure data available</p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <!-- mission vision Section  -->
+
+    <div id="about-3" class="about-section mt-20 mb-50">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-lg-6">
+            <div class="about-content-wrap">
+              <div class="section-title">
+                <h6>Mission & Vision</h6>
+                <h2><%= about.mission_title %></h2>
+              </div>
+              <p><%- about.mission_description %></p>
+
+              <div class="section-title mt-5">
+                <h2><%= about.vision_title %></h2>
+              </div>
+              <p><%- about.vision_description %></p>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-lg-6">
+            <div class="about-img-wrap" style="margin-top: 20px">
+              <img
+                src="
+                        <% if (about.mv_image != null) { %>
+                            <%= "/api/transform/"+JSON.parse(about.mv_image)%>
+                        <% } else {  %>
+                          <%= ` img/demo/about.png` 
+                          %>
+                        <% } %>
+                       " height="auto" width="640" alt=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Section  -->
+
+    <!-- Footer Area  -->
+    <%- include('include/footer') %>
+
+    <!-- Search Dropdown -->
+
+    <div class="search-popup">
+      <!-- Search dropdown content goes here -->
+    </div>
+
+    <!-- Off-canvas Area-->
+
+    <div class="extra-info theme-bg">
+      <!-- Off-canvas content goes here -->
+    </div>
+
+    <div class="offcanvas-overlay"></div>
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+    <%- include('include/script') %>
+  </body>
+</html>

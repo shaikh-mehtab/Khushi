@@ -1,0 +1,185 @@
+<% var webp = products.data[0] %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <title><%= webp.page_title %></title>
+
+    <!--Favicon-->
+    <link rel="icon" href=" <% if (store.data[0].logo1 != null) { %>
+        <%= "/api/transform/"+ JSON.parse(store.data[0].logo1)%>
+    <% } else {  %>
+      <%= `img/demo/favicon.png ` 
+      %>
+    <% } %>" type="image/jpg">
+
+    <meta name="description" content="<%= webp.meta_description %>" />
+        <meta name="title" content="<%= webp.meta_title %>" />
+
+
+    <!--  CSS -->
+    <%- include('include/head') %>
+
+
+</head>
+
+<style>
+    .project-bg {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+</style>
+
+<body>
+
+    <!-- Pre Loader -->
+
+ 	
+
+    <!-- Header Top Area -->
+    <%- include('include/page-header') %>
+  
+
+    <!-- Breadcrumb Area  -->
+
+    <div class="breadcrumb-area" style="background-image: url(<% if (webp.cover_image != null) { %>
+        <%= "/api/transform/"+ JSON.parse(webp.cover_image)%>
+    <% } else {  %>
+      <%= `img/demo/favicon.png ` 
+      %>
+    <% } %>);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-title">
+                        <h1><%= webp.breadcrumd_name %></h1>
+                        <h6><a href="/">Home</a> /<%= webp.breadcrumd_name %> </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Section  -->
+    <div class="project-section project-three section-padding">
+        <div class="container">            
+            <div class="row">
+
+                <% var product=product.data %>
+
+                <% for(var i=0; i<product.length; i++ ) {%>
+                    <div class="col-md-6">
+                        <a href="/product/<%= product[i].slug %>" class="single-project-wrapper">
+                            <div class="project-bg">
+                                <img class="project-image" src="<% if (product[i].image != null) { %>
+                                    <%= "/api/transform/"+ JSON.parse(product[i].image)%>
+                                <% } else {  %>
+                                  <%= `img/demo/favicon.png` %>
+                                <% } %>" alt="">
+                                <div class="project-details">
+                                    <h4><%= product[i].title %></h4>
+                                    <!-- <p>Business Intelligence</p> -->
+                                </div>
+                            </div>                        
+                        </a>
+                    </div>
+                    <%}%>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section  -->
+    
+
+    <!-- Footer Area  -->
+    <%- include('include/footer') %>
+    
+
+
+    <!-- Search Dropdown -->
+
+    <div class="search-popup">
+        <span class="search-back-drop"></span>
+
+        <div class="search-inner">
+            <div class="container">
+                <div class="logo">
+                    <a class="navbar-brand" href="index.html"><img src="img/logo-white.png" alt=""></a>
+                </div>
+                <button class="close-search"><span class="la la-times"></span></button>
+                <form method="post" action="index.html">
+                    <div class="form-group">
+                        <input type="search" name="search-field" value="" placeholder="Type your keyword" required="">
+                        <button type="submit"><i class="fal fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <!-- Off-canvas Area-->
+
+        <div class="extra-info theme-bg">
+            <div class="close-icon menu-close">
+                <button>
+                    <i class="las la-times"></i>
+                </button>
+            </div>
+            <div class="logo-side mb-30">
+                <div class="logo">
+                    <img src="img/logo-white.png" alt="">
+                </div>
+            </div>
+            <div class="side-info">
+                <div class="contact-list mb-40">                    
+                    <p>We must explain to you how all seds this mistakens idea off denouncing</p>
+                    <img src="img/offcanvas-img.jpg" alt="">
+    
+                    <div class="mt-30 mb-30">
+                        <a href="contact.html" class="theme-btn">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="social-area-wrap">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a> 
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a> 
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a> 
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="offcanvas-overlay"></div>
+
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+
+    <!--  JS -->
+    <%- include('include/script') %>
+
+</body>
+
+</html>
